@@ -2,9 +2,11 @@
 
 A simple LaTeX template based on TikZ for transformer architecture.
 
+*The given illustration shows an Encoder-Only Hard Attention Transformer that selects the second maximum coordinate of a sequence, using different kinds of masks for illustration purposes.*
 
 
-## Modularity
+
+## Data separated in a CSV file
 The TeX files are used to build the architecture of the figure. Data appearing in the different cells are filled from the `data.csv` file.
 No modification of the TeX files is needed if only numerical values have to be changed.
 
