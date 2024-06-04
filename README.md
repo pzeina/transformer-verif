@@ -1,5 +1,9 @@
 # transformer-verif
 
-A LaTeX template based on TikZ for transformer architecture.
+A simple LaTeX template based on TikZ for transformer architecture.
 
-[Template](transformer-sec-max.jpg)
+
+
+## Template output:
+
+![Template view](transformer-sec-max.jpg)
