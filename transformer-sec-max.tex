@@ -1,10 +1,8 @@
 \documentclass[tikz, border=10pt]{standalone}
 \usepackage{xstring}
-\usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{datatool} 
-\usepackage{xstring}
-\usepackage{etoolbox}
+\usepackage{filecontents}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows.meta}
@@ -12,19 +10,21 @@
 \usetikzlibrary{fit}
 \usetikzlibrary{decorations.pathreplacing}
 
-\usepackage{filecontents}
 
-
+% Boolean to show dots when dealing with a general architecture
 \newbool{showdots}
 \setbool{showdots}{false}
 
+
+% Boolean to draw boxes around attention heads
 \newbool{showlayers}
 \setbool{showlayers}{false}
+
 
 \begin{document}
 \include{commands.tex}
 
-% 
+
 \newcommand{\Nin}{$\mathcal{N}_{\raisebox{0.5ex}{\scalebox{0.7}{\textrm{in}}}}$}
 \newcommand{\fin}{$f^{\raisebox{0.5ex}{\scalebox{0.7}{\textrm{in}}}}$}
 \newcommand{\gout}{$g^{\raisebox{0.5ex}{\scalebox{0.7}{\textrm{out}}}}$}
@@ -59,21 +59,27 @@
 \def\ndim{3}
 \def\myposition{4}
 
+
+% position
 \inputnode[scalar]{position}{\myposition}
+
 
 % alpha: inputs
 \inputnode[invisible]{alpha_0}{}
 \addlayer{alpha}
 
+
 % w
 \node[invisible, above={\medvertispace + \minheight} of alpha_0] (w_0) {};
 \addlayer[3dvect]{w}
+
 
 % z
 \node[invisible, above={\bigvertispace + \minheight} of w_0] (z_0) {};
 \addlayer[3dvect]{z}
 \node[invisible, right=\decalage of z_0] (zS_0) {};
 \addlayer[3dvect]{zS}
+
 
 % fin
 \foreachvector{\draw[arrow] (alpha_\i) -- (w_\i);}
