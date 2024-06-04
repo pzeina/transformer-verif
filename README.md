@@ -2,4 +2,4 @@
 
 A LaTeX template based on TikZ for transformer architecture.
 
-[Template](transformer-sec-max.pdf)
+[Template](transformer-sec-max.jpg)
